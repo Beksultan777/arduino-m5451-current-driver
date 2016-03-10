@@ -1,0 +1,7 @@
+This project contains the hardware design and software libraries for an Arduino compatible shield (daughter card) that contains 2 M5451YN chips.  These chips have 35 constant-current outputs, giving you a total of 70 outputs that can be used for many applications (and uses a minimum of 3 Arduino digital pins).  The most common use is to light LEDs without needing resistors.
+
+The electronics to connect the Arduino to the M5451 chips is simple.  You can either make your own (instructions in the wiki) or purchase a prebuilt board.
+
+Additionally, the M5451 outputs can be used to drive any logic with the addition of a resistor.  For example, it could be used as a stepper motor controller, allowing you to control >8 stepper motors off on a single chip.  This is possible because the M5451 does not use strobing like the MAX and other LED drivers (i.e. it is not multiplexing the lines and blinking the LEDs).  It outputs a constant current.
+
+The software library implements a variety of features, including PWM so the LED brightness can be set (by blinking the LED faster than the eye can see), and intensity ramping to automatically transition from one brightness to another.  It can be easily used on any project that uses the Arduino and M5451; it is not limited to this shield.
